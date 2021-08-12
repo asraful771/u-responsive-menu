@@ -1,0 +1,160 @@
+/* google font */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Style+Script&display=swap');
+
+/* common css */
+*{margin: 0; padding:0;}
+html{
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+:root{
+    --a-color:rgb(126, 124, 123);
+    --a-hover:rgb(71, 179, 112);
+    --m-color:rgb(207, 84, 84);
+    --menu-color:#fefefe;
+}
+ul{list-style-type: none;}
+a{text-decoration: none;}
+.container{
+    width:90%;
+    height:auto;
+    margin:0 auto;
+
+}
+body{
+    background: url(/assets/img/pfp.jpg)no-repeat;
+    background-size: cover;
+}
+/* commoent css end */
+
+/* header menu css */
+    #header{
+        background:#ddd;
+    }
+    .nav-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height:10vh;
+        padding:5px;
+        
+    }
+    .nav-bar .logo{
+        z-index: 2;
+    }
+    .nav-bar .logo h2 a{
+        font-family: 'Style Script', cursive;
+        color:var(--a-color);
+        font-size:2rem;
+        transition:.5s ease-in-out ;
+        z-index: 1;
+    }
+  
+    .nav-bar .logo h2 a span{
+        color:rgb(71, 179, 112);
+        text-transform: uppercase;
+    }
+    .nav-bar .logo h2:hover a{
+        color:rgb(71, 179, 112);
+    }
+    .nav-bar .logo h2:hover a span{
+        color:rgb(126, 124, 123);
+    }
+
+    .nav-bar nav ul{
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        
+    }
+    .nav-bar nav ul li{
+        padding:5px 10px;
+    }
+    .nav-bar nav ul li a{
+        text-transform: capitalize;
+        font-size: 1.3rem;
+        color:rgba(34, 33, 33, 0.753);
+        font-weight:600;
+        letter-spacing: .1rem;
+        transition:.5s ease-in-out;
+    }
+    .nav-bar nav ul li a:hover{
+        color:var(--a-hover);
+    }
+    .nav-bar nav .hambar .d-menu{
+        display: none;
+    }
+/* header menu css end*/
+/* menu responsive  */
+@media only screen and (max-width:1100px) {
+    .nav-bar nav ul{
+        display:flex;
+        position:absolute;
+        top:0;
+        left:0;
+        opacity: 0;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width:100vw;
+        height:100vh;
+        transition:2s ease all;
+        background:rgba(170, 171, 173, 0.575);
+    }
+    .nav-bar nav .active{
+      opacity: 1;
+    }
+
+    .nav-bar nav .hambar{
+        width:3.5rem;
+        height:3.5rem;
+        border:2px solid #fefefe;
+        border-radius:50%;
+        position: relative;
+        cursor:pointer;
+        z-index: 10;
+
+    }
+    .nav-bar nav .hambar:hover{
+        background: rgb(181, 201, 181);
+    }
+    
+    .nav-bar nav .hambar .d-menu{
+        display:block;
+        font-size:12px;
+        font-weight: 600;
+        position:absolute;
+        left:11px;
+        top:8px;
+        color:var(--menu-color);
+    }
+    .nav-bar nav .hambar .d-menu .on,
+    .nav-bar nav .hambar .d-menu .off{
+        padding:4px;
+        
+        font-weight: 600;
+        font-size:18px;
+
+    }
+    .nav-bar nav .hambar .d-menu .on{
+        color:var(--a-hover);
+    }
+    .nav-bar nav .hambar .d-menu .off{
+        color:var(--m-color);
+    }
+    .nav-bar nav .hambar .d-menu .off{
+        display: none;
+        
+    }
+    .nav-bar nav .active .d-menu .on{
+        display: none;
+    }
+    .nav-bar nav .active .d-menu .off{
+        display: block;
+    }
+
+}
+/* menu responsive end */
